@@ -20,10 +20,10 @@ var playerLosses = 0;
 var crystalArray = [];
 
 //generate random numbers and assign to html with .text
-var THErandomNumber = randomNum(19, 120);
+var THErandomNumber = generator(19, 120);
 
 //adding to html
-$("#randomNum").text(THErandomNumber); 
+$("#randomNum").text(randomNum); 
 $("#playerScore").text(playerScore);
 
 //console log to check the values of the randomized numbers
@@ -31,7 +31,7 @@ console.log("crystal 1: " + crystalOne);
 console.log("crystal 2: " + crystalTwo);
 console.log("crystal 3: " + crystalThree);
 console.log("crystal 4: " + crystalFour);
-console.log("random number: " + THErandomNumber);
+console.log("random number: " + randomNum);
 
 }
 
