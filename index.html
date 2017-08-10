@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <!-- local style sheets -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script type="text/javascript" src="assets/javascript/game.js">
+    </script>
+    <title>Crystal Game</title>
+</head>
+
+<body>
+    <div class="container">
+        <!--Row 1: Header of Crystals Collector-->
+        <div class="row Jumbotron">
+            <div class="col-md-2"></div>
+            <h1 class="col-md-8">Crystals Collector!</h1>
+            <div class="col-md-2"></div>
+        </div>
+        <!-- Row 2: Jumbotron of instuctions or maybe a box?-->
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8 row well well-lg">
+                <!-- Instructions title -->
+                <div>
+                    <h2>Instructions</h2>
+                </div>
+                <!-- Instructions paragraphs -->
+                <div>
+                    <p>You will be given a random number at the start of the game.</p>
+                    <p>There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.</p>
+                    <p>You win the game by matching your total score to the random number; you lose the game if your total score goes above the random number.</p>
+                    <p>The value of each crystal is hidden from you until you click on it.</p>
+                    <p>Each time the game is started, the game will change the values of each crystal.</p>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+        <!-- Row 3 Random number generated and win/loss counter -->
+        <div class="row">
+            <div class="col-md-2"></div>
+            <!-- Random number generated -->
+            <div class="col-md-4 well well-lg">
+                <p>I am the random number you are trying to match: <span id="randomNum"></span></p>
+            </div>
+            <div class="col-md-1"></div>
+            <!-- Counter -->
+            <ul class="col-md-3 list-group">
+                <li class="list-group-item">
+                    <span id="playerWins" class="badge">0</span> Wins:
+                </li>
+                <li class="list-group-item">
+                    <span id="playerLosses" class="badge">0</span> Losses:
+                </li>
+            </ul>
+            <div class="col-md-2"></div>
+        </div>
+        <!-- Row 4: Crystals! -->
+        <div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div id="crystalWell" class="col-md-6 well well-lg">
+                    <!-- Crystal 1 -->
+                    <img class="crystals" id="crystalOne" src="assets/images/blue-green.jpg">
+                    <!-- Crystal 2 -->
+                    <img class="crystals" id="crystalTwo" src="assets/images/pink3.jpg">
+                    <!-- Crystal 3 -->
+                    <img class="crystals" id="crystalThree" src="assets/images/pink2.jpg">
+                    <!-- Crystal 4 -->
+                    <img class="crystals" id="crystalFour" src="assets/images/blue-purple.jpg">
+                </div>
+                <div class="col-md-3"></div>
+            </div>
+        </div>
+        <!-- Score -->
+        <div class="row">
+            <div class="col-md-5"></div>
+            <div class="col-md-2 well well-lg">
+                <p>Your Score:
+                    <span id="playerScore"></span></p>
+            </div>
+            <div class="col-md-5"></div>
+        </div>
+        <!-- Footer? -->
+    </div>
+</body>
