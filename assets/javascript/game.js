@@ -1,7 +1,8 @@
+// On page loading:
 $(document).ready(function() {
 
-	// Global variables
-	// ----------------------------------
+// Global variables
+// ----------------------------------
 	var playerScore = 0;
 	var playerWins = 0;
 	var playerLosses = 0;
@@ -12,14 +13,16 @@ $(document).ready(function() {
 
 	var THErandomNumber = 0;
 
-
-
-	// Functions
-	// ----------------------------------
+// Functions
+// ----------------------------------
 
 	//game setup when page loads
 	function gameStart() {
 		
+		//alert
+		alert("Click any crystal to begin.");
+
+		//set variables & assign numbers
 		var playerScore = 0;
 		var playerWins = 0;
 		var playerLosses = 0;
@@ -27,10 +30,7 @@ $(document).ready(function() {
   		crystalTwo = generator(1, 12);
   		crystalThree = generator(1, 12);
   		crystalFour = generator(1, 12);
-		
-
-		//generate random numbers and assign to html with .text
-		var THErandomNumber = generator(19, 120);
+		THErandomNumber = generator(19, 120);
 
 		//adding to html
 		$("#randomNum").text(THErandomNumber); 
@@ -44,6 +44,13 @@ $(document).ready(function() {
 		console.log("random number: " + THErandomNumber);
 
 	}
+
+	//range of numbers is between the max and the min, yay paramaters!
+	function generator (min, max) {
+		return Math.floor(Math.random() * (max - min + 1)) + min;
+	}
+
+
 
 	// reset game after a win or loss
 	function gameReset () {
@@ -72,17 +79,10 @@ $(document).ready(function() {
 		console.log("random number: " + THErandomNumber);
 	}
 
-	//range of numbers is between the max and the min, yay paramaters!
-	function generator (min, max) {
-		return Math.floor(Math.random() * (max - min + 1)) + min;
-	}
-
-
 	
 
-
-	// Game Logic
-	// ----------------------------------
+// Game Logic
+// ----------------------------------
 
 
 
@@ -90,20 +90,22 @@ $(document).ready(function() {
 
 	gameStart();
 
-	//if crystalWell is clicked and the class within that is clicked "crystals" then you can proceed
-	//else, alert "click a crystal to begin"
+	// on clikc event for 
 	
+	$("#crystalOne").on("click", function() {
+		playerScore += crystalOne;
+		$("#playerScore").append(playerScore);
+	});
 
 
 
-
-	//if crystal value is > than randomNum, then player loses add to loss ++ and then update html 
+	//if crystal value is > than THErandomNumber, then player loses add to loss ++ and then update html 
 	// for updating html$("#playerScore").text(playerScore);
-	//if crystal value is = than randomNum, then player wins add to wins ++ and then update html
+	//if crystal value is = than THErandomNumber, then player wins add to wins ++ and then update html
 
 	//after player wins or loses, run gameReset function
-
+	gameReset();
 
 	// ----------------------------------
-	//end document ready
+	//end of document ready
 });
