@@ -49,10 +49,31 @@ $(document).ready(function() {
 	function generator (min, max) {
 		return Math.floor(Math.random() * (max - min + 1)) + min;
 	}
-	//if crystal value is > than THErandomNumber, then player loses add to loss ++ and then update html 
-	// for updating html$("#playerScore").html(playerScore);
-	//if crystal value is = than THErandomNumber, then player wins add to wins ++ and then update html
+	
+	// Add to wins, update html, alert, reset game
+	function Win() {
+      playerWins++;
+      $("#playerWins").text(playerWins);
+      alert("You collected the perfect amount of crystals!");
+    }
 
+    function Lose() {
+      playerLosses++;
+      $("#playerLosses").text(playerLosses);
+      alert("You have too many crystals, you lose!");
+  	}
+
+	function WinOrLose() {
+		if (playerScore === THErandomNumber) {
+			Win();
+			gameReset();
+		}
+		else if (playerScore > THErandomNumber) {
+			Lose();
+			gameReset();
+
+		}
+	}
 
 	// reset game after a win or loss
 	function gameReset () {
@@ -97,21 +118,25 @@ $(document).ready(function() {
 		playerScore += crystalOne;
 		$("#playerScore").text(playerScore);
 		//check to see if game ends here?
+		WinOrLose();
 	});
 
 	$("#crystalTwo").on("click", function() {
 		playerScore += crystalTwo;
 		$("#playerScore").text(playerScore);
+		WinOrLose();
 	});
 
 	$("#crystalThree").on("click", function() {
 		playerScore += crystalThree;
 		$("#playerScore").text(playerScore);
+		WinOrLose();
 	});
 
 	$("#crystalFour").on("click", function() {
 		playerScore += crystalFour;
 		$("#playerScore").text(playerScore);
+		WinOrLose();
 	});
 
 
