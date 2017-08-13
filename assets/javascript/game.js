@@ -49,7 +49,9 @@ $(document).ready(function() {
 	function generator (min, max) {
 		return Math.floor(Math.random() * (max - min + 1)) + min;
 	}
-
+	//if crystal value is > than THErandomNumber, then player loses add to loss ++ and then update html 
+	// for updating html$("#playerScore").html(playerScore);
+	//if crystal value is = than THErandomNumber, then player wins add to wins ++ and then update html
 
 
 	// reset game after a win or loss
@@ -67,7 +69,7 @@ $(document).ready(function() {
 		//generate random numbers and assign to html with .text
 		THErandomNumber = generator(19, 120);
 
-		//adding to html
+		//adding to html/what is the difference between .text and .html? -- both work, .text more versital
 		$("#randomNum").text(THErandomNumber); 
 		$("#playerScore").text(playerScore);
 
@@ -90,18 +92,28 @@ $(document).ready(function() {
 
 	gameStart();
 
-	// on clikc event for 
-	
+	// on clikc event for crystals
 	$("#crystalOne").on("click", function() {
 		playerScore += crystalOne;
-		$("#playerScore").append(playerScore);
+		$("#playerScore").text(playerScore);
+		//check to see if game ends here?
 	});
 
+	$("#crystalTwo").on("click", function() {
+		playerScore += crystalTwo;
+		$("#playerScore").text(playerScore);
+	});
 
+	$("#crystalThree").on("click", function() {
+		playerScore += crystalThree;
+		$("#playerScore").text(playerScore);
+	});
 
-	//if crystal value is > than THErandomNumber, then player loses add to loss ++ and then update html 
-	// for updating html$("#playerScore").text(playerScore);
-	//if crystal value is = than THErandomNumber, then player wins add to wins ++ and then update html
+	$("#crystalFour").on("click", function() {
+		playerScore += crystalFour;
+		$("#playerScore").text(playerScore);
+	});
+
 
 	//after player wins or loses, run gameReset function
 	gameReset();
