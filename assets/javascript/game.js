@@ -31,10 +31,13 @@ $(document).ready(function() {
   		crystalThree = generator(1, 12);
   		crystalFour = generator(1, 12);
 		THErandomNumber = generator(19, 120);
+		//problems with crystals generating same numbers
 
 		//adding to html
 		$("#randomNum").text(THErandomNumber); 
 		$("#playerScore").text(playerScore);
+
+		//would like to add a timer 30s
 
 		//console log to check the values of the randomized numbers
 		console.log("crystal 1: " + crystalOne);
@@ -94,6 +97,8 @@ $(document).ready(function() {
 		$("#randomNum").text(THErandomNumber); 
 		$("#playerScore").text(playerScore);
 
+		//reset timer
+
 		//console log to check the values of the randomized numbers
 		console.log("crystal 1: " + crystalOne);
 		console.log("crystal 2: " + crystalTwo);
@@ -107,10 +112,7 @@ $(document).ready(function() {
 // Game Logic
 // ----------------------------------
 
-
-
 	//call game start function
-
 	gameStart();
 
 	// on clikc event for crystals
@@ -146,3 +148,6 @@ $(document).ready(function() {
 	// ----------------------------------
 	//end of document ready
 });
+
+//would like to add a timer for each turn
+//would like to fix the duplicate possiblity numbers for crystals
